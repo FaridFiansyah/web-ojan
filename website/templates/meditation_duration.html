@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Durasi Meditasi</title>
+    <link rel="stylesheet" href="static/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .duration-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .duration-button:hover {
+            background-color: #45a049;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .menu li {
+            float: left;
+        }
+
+        .menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .menu li a:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+          <div class="logo"><a href="#home">Mental Health Care</a></div>
+          <div class="menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/mood-create">Buat Mood</a></li>
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="#Call Us">Call Us!</a></li>
+                <li><a href="" class="tbl-merah">Panic Button</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+        <h1>Pilih Durasi Meditasi</h1>
+        <p>Silakan pilih durasi meditasi yang diinginkan:</p>
+        <div>
+            <!-- Button untuk memilih durasi -->
+            <a href="{{ url_for('audioplay.audio_play', duration='short') }}" class="duration-button">5 Menit</a>
+            <a href="{{ url_for('audioplay.audio_play', duration='medium') }}" class="duration-button">10 Menit</a>
+            <a href="{{ url_for('audioplay.audio_play', duration='long') }}" class="duration-button">15 Menit</a>
+        </div>
+    </div>
+</body>
+</html>

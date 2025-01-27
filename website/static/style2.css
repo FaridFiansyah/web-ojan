@@ -1,0 +1,220 @@
+* {
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;  
+}
+
+.wrapper {
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.logo a {
+    font-size: 50px;
+    font-weight: 800;
+    float: left;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #E5D9F2;
+}
+
+.menu {
+    float: right;
+}
+
+nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: sticky;
+    top: 0;
+    background: #433878;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left; 
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 15px 0px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Change to column for better layout */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 50px;
+}
+
+.kolom {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.kolom .deskripsi {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #433878;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #6C48C5;
+    width: 100%;
+    line-height: 50px;
+    text-align: center; /* Center the heading */
+}
+
+a.tbl-merah {
+    background: #E5D9F2;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px;
+    color: #2E073F;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-merah:hover {
+    background: #6C48C5;
+    text-decoration: none;
+}
+
+a.tbl-biru {
+    background: #6C48C5;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px;
+    color: #E2BFD9;
+    cursor: pointer;
+    font-weight: bold; 
+}
+
+a.tbl-biru:hover {
+    background: #E5D9F2;
+    text-decoration: none;
+}
+
+p {
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
+/* Additional styles for the mood create form */
+.form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%; /* Make it responsive */
+    margin: 20px auto; /* Center the form */
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #433878; /* Match the theme */
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #6C48C5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #5a3e9d; /* Darker shade on hover */
+}
+
+/* Flash messages styles */
+.flash-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.flash-message.success {
+    background-color: #dff0d8; /* Light green for success messages */
+    color: #3c763d; /* Dark green text */
+}
+
+.flash-message.error {
+    background-color: #f2dede; /* Light red for error messages */
+    color: #a94442; /* Dark red text */
+}
+
+.flash-message.info {
+    background-color: #d9edf7; /* Light blue for info messages */
+    color: #31708f; /* Dark blue text */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90%; /* Make the wrapper responsive */
+    }
+
+    nav ul li {
+        float: none; /* Stack menu items vertically on small screens */
+        text-align: center; /* Center align text */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .form-container {
+        width: 90%; /* Make form responsive */
+    }
+
+    h2 {
+        font-size: 36px; /* Adjust heading size for smaller screens */
+    }
+}

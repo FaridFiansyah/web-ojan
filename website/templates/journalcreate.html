@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Health Development</title>
+    <link rel="stylesheet" href="static/style2.css" />
+  </head>
+  <body>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <nav>
+      <div class="wrapper">
+        <div class="logo"><a href="#home">Mental Health Care</a></div>
+        <div class="menu">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/mood-entries">Lihat Mood</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="#Call Us">Call Us!</a></li>
+            <li><a href="" class="tbl-merah">Panic Button</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="journal">
+      <h2>Create a Journal Entry</h2>
+      <form action="/mood-create" method="POST">
+        <label for="mood">Mood:</label>
+        <select id="mood" name="mood">
+          <option value="Baik Sekali">Baik Sekali</option>
+          <option value="Baik">Baik</option>
+          <option value="Normal">Normal</option>
+          <option value="Buruk">Buruk</option>
+          <option value="Buruk Sekali">Buruk Sekali</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" placeholder="Enter the date" required/>
+
+        <label for="note">Note:</label>
+        <input type="text" id="note" name="note" placeholder="Enter your note" required/>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>

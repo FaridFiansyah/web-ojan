@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Health Development</title>
+    <link rel="stylesheet" href="static/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .mood-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .mood-note {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;  /* Adjust width as needed */
+            transition: transform 0.2s;
+        }
+
+        .mood-note:hover {
+            transform: scale(1.05);
+        }
+
+        .mood-date {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .mood {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .mood-note p {
+            margin: 5px 0;
+        }
+
+        /* Mood color classes */
+        .mood-baik-sekali {
+            background-color: #d4edda; /* Light Green */
+        }
+
+        .mood-baik {
+            background-color: #bef68d; /* Green to Yellow */
+        }
+
+        .mood-normal {
+            background-color: #e4ec55; /* Yellow */
+        }
+
+        .mood-buruk {
+            background-color: #ffeeba; /* Orange */
+        }
+
+        .mood-buruk-sekali {
+            background-color: #f8d7da; /* Red */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+          <div class="logo"><a href="#home">Mental Health Care</a></div>
+          <div class="menu">
+            <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/">About</a></li>
+                  <li><a href="/mood-create">Buat Mood</a></li>
+                  <li><a href="/logout">logout</a></li>
+                  <li><a href="#Call Us">Call Us!</a></li>
+                  <li><a href="" class="tbl-merah">Panic Button</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <h1>Your Mood Entries</h1>
+    
+    <div class="mood-container">
+        {% for entry in entries %}
+        <div class="mood-note 
+            {% if entry.mood == 'Baik Sekali' %} mood-baik-sekali
+            {% elif entry.mood == 'Baik' %} mood-baik
+            {% elif entry.mood == 'Normal' %} mood-normal
+            {% elif entry.mood == 'Buruk' %} mood-buruk
+            {% elif entry.mood == 'Buruk Sekali' %} mood-buruk-sekali
+            {% endif %}">
+            <div class="mood-date">{{ entry.date.strftime('%Y-%m-%d') }}</div>
+            <div class="mood">{{ entry.mood }}</div>
+            <p><strong>Note:</strong> {{ entry.note }}</p>
+        </div>
+        {% else %}
+        <div class="mood-note" style="text-align: center; width: 100%;">
+            <p>No entries found.</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
